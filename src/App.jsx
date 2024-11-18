@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import "./App.css";
 import MarqueeCarousel from "./MarqueCarousel";
+import { useMediaQuery } from "@mui/material";
 
 function App() {
+  const isMobile = useMediaQuery("(max-width:768px)");
+
   useEffect(() => {
     const loadScripts = () => {
       // Story Script
@@ -146,7 +149,12 @@ function App() {
         </a>
       </nav>
       <div>
-        <div className="sectionPlugin" style={{ height: "60vh" }}>
+        <div
+          className="sectionPlugin"
+          style={{
+            height: isMobile ? "42vh" : "60vh",
+          }}
+        >
           <h1 id="storyPlugin">Story Plugin</h1>
           <div
             className="render_lively_story_plugin"
@@ -161,7 +169,10 @@ function App() {
           <MarqueeCarousel items={StoryBrands} />
         </div>
 
-        <div className="sectionPlugin" style={{ height: "80vh" }}>
+        <div
+          className="sectionPlugin"
+          style={{ height: isMobile ? "70vh" : "80vh" }}
+        >
           <h1 id="storyPlugin">Hero Banner Plugin</h1>
           <div
             className="render_lively_product_hero_plugin"
@@ -173,7 +184,10 @@ function App() {
         </div>
         <div
           className="sectionPlugin"
-          style={{ height: "100vh", marginTop: "30vh" }}
+          style={{
+            height: isMobile ? "50vh" : "100vh",
+            marginTop: isMobile ? "10vh" : "30vh",
+          }}
         >
           <h1 id="sfPulgin">Shoppable Feeds Plugin</h1>
           <div
@@ -183,14 +197,15 @@ function App() {
             wid_id="9a0864b768"
           ></div>
         </div>
-        <div style={{ marginTop: "50px" }}>
+
+        <div style={{ marginTop: isMobile ? "18vh" : "50px" }}>
           <div style={{ marginBottom: "16px" }}> Brands Using</div>
           <MarqueeCarousel items={feedBrands} />
         </div>
 
         <div
           className="sectionPlugin"
-          style={{ height: "100vh", marginTop: "20vh" }}
+          style={{ height: "100vh", marginTop: isMobile ? "10vh" : "20vh" }}
         >
           <h1 id="3dSFPlugin">3D SF Plugin</h1>
           <div

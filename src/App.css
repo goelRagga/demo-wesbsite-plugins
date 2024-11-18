@@ -63,6 +63,7 @@ nav{
   display: flex;
   flex-direction: column;
   gap:30px;
+  
 
 }
 .brandImage{
@@ -77,4 +78,44 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  /* Styles for mobile devices */
+
+  div{
+    justify-content: flex-start;
+  }
+  body{
+    text-align: center;
+  }
+
+  h1{
+    font-size: 16px;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  #root{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    align-items: flex-start;
+    text-align: center !important;
+  }
+  .sectionPlugin{
+    max-width: 100vw;
+    align-items: flex-start !important;
+    padding: 20px;
+    text-align: center !important;
+  }
+
+  .my-class {
+    font-size: 14px;
+  }
+  .demoSiteHref{
+    margin-top: 10px;
+    font-size: 16px;
+  }
 }
